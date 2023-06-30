@@ -5,5 +5,5 @@ class RegisterRequest (
     val email: String,
     val password: String,
     val language: String,
-    val country: String
+    val contry: String
     )
