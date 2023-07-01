@@ -14,7 +14,7 @@ class CredentialsRepository(private val api: AuthService) {
     suspend fun login(email: String, password: String): ApiResponse<String> {
         try {
 
-            val response: LoginResponse =
+            val response:LoginResponse =
                 api.login(LoginRequest(email, password))
             return ApiResponse.Succes(response.token)
         } catch (e: HttpException) {
@@ -26,6 +26,7 @@ class CredentialsRepository(private val api: AuthService) {
             return ApiResponse.Error(e)
         }
     }
+
     suspend fun register(name: String, email: String, password: String,language:String, country:String): ApiResponse<String> {
         try {
 

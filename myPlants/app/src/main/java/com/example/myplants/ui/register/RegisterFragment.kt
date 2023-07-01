@@ -1,4 +1,4 @@
-package com.example.myplants.register
+package com.example.myplants.ui.register
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
