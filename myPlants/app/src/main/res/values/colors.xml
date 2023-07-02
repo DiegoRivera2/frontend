@@ -4,5 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="background">#D7FBE5</color>
     <color name="buttons">#00ADB5</color>
+    <color name="buttons_navbar">#E6F8ED</color>
+    <color name="background_navbar">#B1EEBE</color>
 
 </resources>

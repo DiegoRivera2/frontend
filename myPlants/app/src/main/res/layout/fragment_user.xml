@@ -3,9 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".ui.home.HomeFragment">
+    android:layout_height="match_parent"
+    tools:context=".ui.users.UserFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
                 android:layout_width="64dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
-                android:backgroundTint="@color/buttons_navbar"
+                android:backgroundTint="@color/background_navbar"
                 android:src="@drawable/baseline_home_24"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -48,7 +48,7 @@
                 android:layout_width="64dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="60dp"
-                android:backgroundTint="@color/background_navbar"
+                android:backgroundTint="@color/buttons_navbar"
                 android:src="@drawable/baseline_person_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imageButton" />
