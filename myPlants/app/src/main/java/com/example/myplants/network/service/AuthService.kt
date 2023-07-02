@@ -12,6 +12,6 @@ interface AuthService {
     @POST("/login")
     suspend fun login(@Body credentiales: LoginRequest): LoginResponse
 
-    @POST("api/auth/register")
+    @POST("plantsApi/users")
     suspend fun register(@Body credentiales: RegisterRequest): RegisterResponse
 }

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.myplants.ui.register.viewmodel.RegisterViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
@@ -10,7 +18,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="270dp"
-        android:layout_height="264dp"
+        android:layout_height="196dp"
         android:src="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,68 +41,108 @@
             android:layout_height="match_parent"
             android:padding="8dp">
 
-            <EditText
-                android:id="@+id/name_login_edit_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="24dp"
-                android:hint="Name"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/email_login_edit_text"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/name_login_edit_view"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="24dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_margin="8dp"
+                android:hint="Name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:text="@={viewmodel.name}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                     />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/email_login_edit_text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_margin="8dp"
                 android:hint="Email"
                 app:layout_constraintStart_toStartOf="@+id/name_login_edit_view"
-                app:layout_constraintTop_toBottomOf="@+id/name_login_edit_view" />
+                app:layout_constraintTop_toBottomOf="@+id/name_login_edit_view" >
 
-            <EditText
+                <com.google.android.material.textfield.TextInputEditText
+                    android:text="@={viewmodel.email}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/password_login_edit_text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="24dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_margin="8dp"
                 android:hint="Password"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_login_edit_text" />
+                app:layout_constraintTop_toBottomOf="@+id/email_login_edit_text" >
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:text="@={viewmodel.password}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    />
 
-            <EditText
-                android:id="@+id/language_login_edit_text"
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/age_login_edit_text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="24dp"
-                android:hint="language"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:layout_margin="8dp"
+                android:hint="Age"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/password_login_edit_text" />
+                app:layout_constraintTop_toBottomOf="@+id/password_login_edit_text"  >
 
-            <EditText
-                android:id="@+id/country_login_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="24dp"
-                android:hint="Country"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/language_login_edit_text" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:text="@={viewmodel.age}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/new_create_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:text="Create"
+                android:onClick="@{() -> viewmodel.onRegister()}"
+                android:backgroundTint="@color/buttons"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/country_login_edit_text" />
-
+                app:layout_constraintTop_toBottomOf="@+id/age_login_edit_text" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

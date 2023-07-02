@@ -27,7 +27,7 @@ class LoginFragment : Fragment() {
         LoginViewModel.Factory
     }
 
-    private lateinit var binding: FragmentLoginBinding
+    private lateinit var bindingLogin: FragmentLoginBinding
 
     val app by lazy {
         requireActivity().application as DigitalApplication
@@ -37,8 +37,8 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentLoginBinding.inflate(inflater,container,false)
-        return binding.root
+        bindingLogin = FragmentLoginBinding.inflate(inflater,container,false)
+        return bindingLogin.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -48,14 +48,14 @@ class LoginFragment : Fragment() {
         observeStatus()
 
 
-        binding.newCountButton.setOnClickListener {
+        bindingLogin.newCountButton.setOnClickListener {
             it.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
     }
 
 
     private fun setViewModel() {
-        binding.viewmodel = loginViewModel
+        bindingLogin.viewmodel = loginViewModel
     }
 
     private fun observeStatus() {

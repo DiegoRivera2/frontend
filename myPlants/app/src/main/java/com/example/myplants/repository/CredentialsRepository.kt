@@ -27,11 +27,11 @@ class CredentialsRepository(private val api: AuthService) {
         }
     }
 
-    suspend fun register(name: String, email: String, password: String,language:String, country:String): ApiResponse<String> {
+    suspend fun register(name: String, email: String, password: String, age:Int, position:String): ApiResponse<String> {
         try {
 
             val response: RegisterResponse =
-                api.register(RegisterRequest(name, email, password, language, country))
+                api.register(RegisterRequest(name, email, password, age, position))
             return ApiResponse.Succes(response.message)
         } catch (e: HttpException) {
             if (e.code() == 400) {
