@@ -49,6 +49,12 @@
         <action
             android:id="@+id/action_plantsFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_plantsFragment_to_plantDetailFragment"
+            app:destination="@id/plantDetailFragment" />
+        <action
+            android:id="@+id/action_plantsFragment_to_newPlantFragment"
+            app:destination="@id/newPlantFragment" />
     </fragment>
     <fragment
         android:id="@+id/userFragment"
@@ -62,4 +68,12 @@
             android:id="@+id/action_userFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/plantDetailFragment"
+        android:name="com.example.myplants.PlantDetailFragment"
+        android:label="PlantDetailFragment" />
+    <fragment
+        android:id="@+id/newPlantFragment"
+        android:name="com.example.myplants.ui.newplant.NewPlantFragment"
+        android:label="NewPlantFragment" />
 </navigation>

@@ -3,10 +3,16 @@ package com.example.myplants
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import com.example.myplants.data.plantList
 import com.example.myplants.network.digitalapi.DigitaltInstance
 import com.example.myplants.repository.CredentialsRepository
+import com.example.myplants.repository.PlantRepository
 
 class DigitalApplication : Application() {
+
+    val plantRepository: PlantRepository by lazy {
+        PlantRepository(plantList)
+    }
 
     private val prefs: SharedPreferences by lazy {
         getSharedPreferences("Retrofit", Context.MODE_PRIVATE)

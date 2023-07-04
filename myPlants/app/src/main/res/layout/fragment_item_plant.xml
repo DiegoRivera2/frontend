@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.plants.ItemPlantFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".ui.food.ItemFragment">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/food_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            app:cardElevation="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/item_plant_color_radial"
+                android:padding="16dp">
+
+                <!--para diseña una card se necesita crear una cardView y ADENTRO del card view se organiza con un constrain layout-->
+
+                <ImageView
+                    android:id="@+id/plant_image_View"
+                    android:layout_width="77dp"
+                    android:layout_height="66dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    tools:src="@drawable/girasol"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/name_plant_text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="12dp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintStart_toEndOf="@+id/plant_image_View"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Girasol" />
+
+                <ScrollView
+                    android:layout_width="163dp"
+                    android:layout_height="55dp"
+                    app:layout_constraintStart_toStartOf="@+id/name_plant_text_view"
+                    app:layout_constraintTop_toBottomOf="@+id/name_plant_text_view">
+
+                    <TextView
+                        android:id="@+id/description_food_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        tools:text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut incidunt non possimus, aperiam eligendi molestiae doloribus magni, nihil cumque illo corrupti fugiat voluptas voluptatibus minus corporis dicta error. Nemo, repellat?" />
+
+                </ScrollView>
+
+                <ImageView
+                    android:id="@+id/edit_button"
+                    android:layout_width="60dp"
+                    android:layout_height="58dp"
+                    android:src="@drawable/baseline_create_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
