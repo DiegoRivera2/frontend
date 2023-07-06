@@ -1,8 +1,9 @@
 package com.example.myplants.repository
 
 import com.example.myplants.data.model.PlantModel
+import com.example.myplants.network.service.PlantService
 
-class PlantRepository (private val PlantRepository: MutableList<PlantModel>)  {
-    fun getPlant()=PlantRepository
-    fun addPlant(newPlant: PlantModel) = PlantRepository.add(newPlant)
+class PlantRepository (val plantService: PlantService)  {
+    suspend fun getPlant() = plantService.allPlants()
+   // fun addPlant(newPlant: PlantModel) = PlantRepository.add(newPlant)
 }

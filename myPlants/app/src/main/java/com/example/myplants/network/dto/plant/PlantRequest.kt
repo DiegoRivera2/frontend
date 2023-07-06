@@ -5,5 +5,4 @@ data class PlantRequest (
     val wateramount: Float,
     val sunamount : Int,
     val image: String,
-    val description: String
-        )
+    val description: String)

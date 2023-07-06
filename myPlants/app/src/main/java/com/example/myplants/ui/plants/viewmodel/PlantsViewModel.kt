@@ -2,7 +2,6 @@ package com.example.myplants.ui.plants.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
@@ -18,8 +17,10 @@ class PlantsViewModel (private val repository: PlantRepository): ViewModel() {
     var description  = MutableLiveData("")
     var status = MutableLiveData("")
 
-    fun getFood()= repository.getPlant()
-    fun addFood(food: PlantModel) = repository.addPlant(food)
+    suspend fun getFood() = repository.getPlant()
+    fun addFood(food: PlantModel)  {
+        //repository.addPlant(food)
+    }
     private fun validarData():Boolean{
         when{
             name.value.isNullOrEmpty()->return false
@@ -54,7 +55,7 @@ class PlantsViewModel (private val repository: PlantRepository): ViewModel() {
     }
     fun setSelectedPlant(plant:PlantModel){
         name.value = plant.name
-        wateramount.value = plant.wateramount.toString()
+        wateramount.value = plant.watermount.toString()
         sunamount.value = plant.sunamount.toString()
         image.value = plant.image
         description.value = plant.description

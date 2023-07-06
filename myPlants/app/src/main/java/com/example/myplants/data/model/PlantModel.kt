@@ -1,9 +1,12 @@
 package com.example.myplants.data.model
 
+import com.google.gson.annotations.SerializedName
+
 data class PlantModel(
-    val name: String,
-    val wateramount: Int,
-    val sunamount: Int,
-    val image: String,
-    val description: String
+    @SerializedName("_id") val id: String,
+    @SerializedName("name") val name: String,
+    @SerializedName("wateramount") val watermount: Int,
+    @SerializedName("sunamount") val sunamount: Int,
+    @SerializedName("image") val image: String,
+    @SerializedName("description") val description: String
 )

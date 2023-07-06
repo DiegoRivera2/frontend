@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,7 +17,7 @@ import com.example.myplants.databinding.FragmentHomeBinding
 import com.example.myplants.databinding.FragmentPlantsBinding
 import com.example.myplants.ui.plants.recyclerview.PlantRecyclerViewAdapter
 import com.example.myplants.ui.plants.viewmodel.PlantsViewModel
-
+import kotlinx.coroutines.launch
 class PlantsFragment : Fragment() {
 
     private lateinit var bindingplant: FragmentPlantsBinding
@@ -58,10 +59,15 @@ class PlantsFragment : Fragment() {
     }
 
     private fun displayPlant(){
-        adapter.setData(plantViewModel.getFood())
-        adapter.notifyDataSetChanged()//notifica si hay un cambio
+        lifecycleScope.launch {
+            adapter.setData(plantViewModel.getFood())
+            adapter.notifyDataSetChanged()//notifica si hay un cambio
+        }
+
     }
+
     companion object {
 
     }
 }
+

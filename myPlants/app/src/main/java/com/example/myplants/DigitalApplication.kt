@@ -3,7 +3,6 @@ package com.example.myplants
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
-import com.example.myplants.data.plantList
 import com.example.myplants.network.digitalapi.DigitaltInstance
 import com.example.myplants.repository.CredentialsRepository
 import com.example.myplants.repository.PlantRepository
@@ -11,7 +10,7 @@ import com.example.myplants.repository.PlantRepository
 class DigitalApplication : Application() {
 
     val plantRepository: PlantRepository by lazy {
-        PlantRepository(plantList)
+        PlantRepository(DigitaltInstance.getPlantService())
     }
 
     private val prefs: SharedPreferences by lazy {
