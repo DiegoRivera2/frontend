@@ -28,5 +28,6 @@ object DigitaltInstance {
 
     fun getPlantService(): PlantService {
         return retrofit.create(PlantService::class.java)
-}
+    }
+
 }

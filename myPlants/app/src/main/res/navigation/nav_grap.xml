@@ -71,9 +71,17 @@
     <fragment
         android:id="@+id/plantDetailFragment"
         android:name="com.example.myplants.PlantDetailFragment"
-        android:label="PlantDetailFragment" />
+        android:label="PlantDetailFragment" >
+        <action
+            android:id="@+id/action_plantDetailFragment_to_plantsFragment"
+            app:destination="@id/plantsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newPlantFragment"
         android:name="com.example.myplants.ui.newplant.NewPlantFragment"
-        android:label="NewPlantFragment" />
+        android:label="NewPlantFragment" >
+        <action
+            android:id="@+id/action_newPlantFragment_to_plantsFragment"
+            app:destination="@id/plantsFragment" />
+    </fragment>
 </navigation>

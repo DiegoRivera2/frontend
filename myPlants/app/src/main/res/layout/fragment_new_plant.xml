@@ -25,7 +25,7 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="34dp"
         android:layout_marginRight="34dp"
         app:cardCornerRadius="34dp"
@@ -56,7 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    />
+                    android:text="@={viewmodel.name}" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -68,7 +68,7 @@
                 android:layout_margin="8dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
-                android:hint="Water level"
+                android:hint="Water mount"
                 app:layout_constraintStart_toStartOf="@+id/name_plant_edit_view"
                 app:layout_constraintTop_toBottomOf="@+id/name_plant_edit_view">
 
@@ -76,7 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textEmailAddress"
-                    />
+                    android:text="@={viewmodel.watermount}" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -88,7 +88,7 @@
                 android:layout_margin="8dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
-                android:hint="Sun level"
+                android:hint="Sun time in hour"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/water_level_edit_text">
@@ -97,28 +97,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/water_every_edit_text"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="32dp"
-                android:hint="Water every"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/sun_level_edit_text">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    />
+                    android:text="@={viewmodel.sunmount}" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -130,16 +109,16 @@
                 android:layout_margin="8dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="32dp"
-                android:hint="Water mount"
+                android:hint="Image URL"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/water_every_edit_text">
+                app:layout_constraintTop_toBottomOf="@+id/sun_level_edit_text">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:text="@={viewmodel.image}"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                   />
+                    android:inputType="textEmailAddress" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -152,6 +131,7 @@
                 android:layout_marginEnd="8dp"
                 android:background="@null"
                 android:gravity="top|start"
+                android:text="@={viewmodel.description}"
                 android:hint="Description de la planta"
                 android:lines="10"
                 android:padding="16dp"
@@ -167,6 +147,7 @@
                 android:layout_margin="16dp"
                 android:backgroundTint="@color/buttons"
                 android:text="Create"
+                android:onClick="@{() -> viewmodel.onNewPlant()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.578"
                 app:layout_constraintStart_toStartOf="parent"

@@ -44,6 +44,9 @@ class PlantsFragment : Fragment() {
         bindingplant.userButtonNavbar.setOnClickListener(){
             it.findNavController().navigate(R.id.action_plantsFragment_to_userFragment)
         }
+        bindingplant.newUserButton.setOnClickListener(){
+            it.findNavController().navigate(R.id.action_plantsFragment_to_newPlantFragment)
+        }
     }
     //llenando datos en el recycler
     private fun setRecyclerView(view:View){
