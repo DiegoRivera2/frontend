@@ -67,6 +67,9 @@
         <action
             android:id="@+id/action_userFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_usersFragment"
+            app:destination="@id/usersFragment" />
     </fragment>
     <fragment
         android:id="@+id/plantDetailFragment"
@@ -83,5 +86,13 @@
         <action
             android:id="@+id/action_newPlantFragment_to_plantsFragment"
             app:destination="@id/plantsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="com.example.myplants.ui.users.UsersFragment"
+        android:label="UsersFragment" >
+        <action
+            android:id="@+id/action_usersFragment_to_userFragment"
+            app:destination="@id/userFragment" />
     </fragment>
 </navigation>

@@ -30,6 +30,9 @@ class UserFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        bindinguser.userButton.setOnClickListener(){
+            it.findNavController().navigate(R.id.action_userFragment_to_usersFragment)
+        }
         bindinguser.homeButtonNavbar.setOnClickListener(){
             it.findNavController().navigate(R.id.action_userFragment_to_homeFragment)
         }

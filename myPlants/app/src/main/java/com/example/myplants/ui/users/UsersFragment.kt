@@ -1,4 +1,4 @@
-package com.example.myplants.ui.plants
+package com.example.myplants.ui.users
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,64 +13,61 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.myplants.R
 import com.example.myplants.data.model.PlantModel
-import com.example.myplants.databinding.FragmentHomeBinding
+import com.example.myplants.data.model.UserModel
 import com.example.myplants.databinding.FragmentPlantsBinding
+import com.example.myplants.databinding.FragmentUsersBinding
 import com.example.myplants.ui.plants.recyclerview.PlantRecyclerViewAdapter
-import com.example.myplants.ui.plants.viewmodel.PlantsViewModel
+import com.example.myplants.ui.users.recyclerview.UserRecyclerAdapter
+import com.example.myplants.ui.users.viewmodel.UsersViewModel
 import kotlinx.coroutines.launch
-class PlantsFragment : Fragment() {
 
-    private lateinit var bindingplant: FragmentPlantsBinding
-    private lateinit var adapter: PlantRecyclerViewAdapter
-    private val plantViewModel: PlantsViewModel by activityViewModels{
-        PlantsViewModel.Factory
+
+class UsersFragment : Fragment() {
+
+    private lateinit var bindingUsersFragment: FragmentUsersBinding
+    private lateinit var adapter: UserRecyclerAdapter
+    private val userViewModel : UsersViewModel by activityViewModels {
+        UsersViewModel.Factory
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        bindingplant = DataBindingUtil.inflate(inflater,R.layout.fragment_plants,container,false)
-        return bindingplant.root
+        bindingUsersFragment = DataBindingUtil.inflate(inflater,R.layout.fragment_users,container,false)
+        return bindingUsersFragment.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setRecyclerView(view)
-        bindingplant.homeButtonNavbar.setOnClickListener(){
+        bindingUsersFragment.homeButtonNavbar.setOnClickListener(){
             it.findNavController().navigate(R.id.action_plantsFragment_to_homeFragment)
         }
-        bindingplant.userButtonNavbar.setOnClickListener(){
+        bindingUsersFragment.userButtonNavbar.setOnClickListener(){
             it.findNavController().navigate(R.id.action_plantsFragment_to_userFragment)
         }
-        bindingplant.newUserButton.setOnClickListener(){
-            it.findNavController().navigate(R.id.action_plantsFragment_to_newPlantFragment)
+        bindingUsersFragment.plantsButtonNavbar.setOnClickListener(){
+            it.findNavController().navigate(R.id.action_plantsFragment_to_userFragment)
         }
     }
-    //llenando datos en el recycler
     private fun setRecyclerView(view:View){
-        bindingplant.plantsRecyclerView.layoutManager = LinearLayoutManager(view.context)
+        bindingUsersFragment.usersRecyclerView.layoutManager = LinearLayoutManager(view.context)
 
-        adapter = PlantRecyclerViewAdapter { selectedPlant -> showSelectedItem(selectedPlant) }
-        bindingplant.plantsRecyclerView.adapter = adapter
+        adapter = UserRecyclerAdapter { selectedUser -> showSelectedItem(selectedUser) }
+        bindingUsersFragment.usersRecyclerView.adapter = adapter
         displayPlant()//mostrando los card
     }
-    private fun showSelectedItem(plant: PlantModel){
-        plantViewModel.setSelectedPlant(plant)
-        findNavController().navigate(R.id.action_plantsFragment_to_plantDetailFragment)
-    }
+    private fun showSelectedItem(user: UserModel){
+        userViewModel.setSelectedUser(user)
 
+    }
     private fun displayPlant(){
         lifecycleScope.launch {
-            adapter.setData(plantViewModel.getPlant())
+            adapter.setData(userViewModel.getUser())
             adapter.notifyDataSetChanged()//notifica si hay un cambio
         }
 
     }
 
-    companion object {
-
-    }
 }
-

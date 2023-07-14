@@ -32,7 +32,7 @@ class UsersViewModel (private val repository: UsersRepository): ViewModel() {
         const val WRONG_DATA = "Wrong data"
         const val INACTIVE = ""
     }
-    fun setSelectedPlant(users: UserModel){
+    fun setSelectedUser(users: UserModel){
         name.value = users.name
         email.value = users.email
         age.value = users.age.toString()
