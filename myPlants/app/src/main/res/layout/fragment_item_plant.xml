@@ -2,86 +2,144 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".ui.plants.ItemPlantFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:context=".ui.food.ItemFragment">
+        tools:context=".ui.plants.ItemPlantFragment">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/food_card_view"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="16dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             app:cardElevation="10dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/item_plant_color_radial"
-                android:padding="16dp">
+                android:layout_height="wrap_content"
+                android:background="@drawable/styles_item_plant_card"
+                android:orientation="vertical">
 
-                <!--para diseña una card se necesita crear una cardView y ADENTRO del card view se organiza con un constrain layout-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <ImageView
-                    android:id="@+id/plant_image_View"
-                    android:layout_width="77dp"
-                    android:layout_height="66dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    tools:src="@drawable/girasol"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <!-- Media -->
+
+                    <ImageView
+                        android:id="@+id/plant_image_View"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:contentDescription="Imagen de la planta"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/girasol" />
+
+                    <!-- Franja -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        android:background="@color/black"
+                        android:alpha="0.40"
+                        app:layout_constraintBottom_toBottomOf="@+id/plant_image_View"
+                        app:layout_constraintStart_toStartOf="@+id/plant_image_View"
+                        >
 
 
-                <TextView
-                    android:id="@+id/name_plant_text_view"
-                    android:layout_width="wrap_content"
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <TextView
+                        android:id="@+id/name_plant_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Girasol"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:textStyle="bold"
+                        android:textAppearance="?attr/textAppearanceHeadline6"
+                        android:textColor="@color/item_text"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginTop="12dp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="16dp"
-                    app:layout_constraintStart_toEndOf="@+id/plant_image_View"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="Girasol" />
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-                <ScrollView
-                    android:layout_width="163dp"
-                    android:layout_height="55dp"
-                    app:layout_constraintStart_toStartOf="@+id/name_plant_text_view"
-                    app:layout_constraintTop_toBottomOf="@+id/name_plant_text_view">
+                    <!-- Title, secondary and supporting text -->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="16dp"
+                            android:text="water: 4 liters"
+                            android:textStyle="bold"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="@color/item_text_water" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="sun: 5 hours"
+                            android:textStyle="bold"
+                            android:textAppearance="?attr/textAppearanceBody2"
+                            android:textColor="@color/item_text_sun" />
+
+
+                    </LinearLayout>
 
                     <TextView
                         android:id="@+id/description_food_text_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="357dp"
+                        android:layout_height="35dp"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="@color/item_text"
                         tools:text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut incidunt non possimus, aperiam eligendi molestiae doloribus magni, nihil cumque illo corrupti fugiat voluptas voluptatibus minus corporis dicta error. Nemo, repellat?" />
 
-                </ScrollView>
+                </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/edit_button"
-                    android:layout_width="60dp"
-                    android:layout_height="58dp"
-                    android:src="@drawable/baseline_create_24"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/styles_item_plant_button">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/edit_item_button"
+                        style="?attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/styles_item_plant_button"
+                        android:text="Edit" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

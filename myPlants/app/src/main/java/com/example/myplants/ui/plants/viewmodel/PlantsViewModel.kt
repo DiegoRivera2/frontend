@@ -1,5 +1,7 @@
 package com.example.myplants.ui.plants.viewmodel
 
+import android.graphics.Bitmap
+import android.graphics.drawable.Drawable
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
@@ -8,6 +10,7 @@ import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.myplants.DigitalApplication
 import com.example.myplants.data.model.PlantModel
 import com.example.myplants.repository.PlantRepository
+import com.squareup.picasso.Picasso
 
 class PlantsViewModel (private val repository: PlantRepository): ViewModel() {
     var name  = MutableLiveData("")
@@ -17,10 +20,8 @@ class PlantsViewModel (private val repository: PlantRepository): ViewModel() {
     var description  = MutableLiveData("")
     var status = MutableLiveData("")
 
-    suspend fun getFood() = repository.getPlant()
-    fun addFood(food: PlantModel)  {
-        //repository.addPlant(food)
-    }
+    suspend fun getPlant() = repository.getPlant()
+
     private fun validarData():Boolean{
         when{
             name.value.isNullOrEmpty()->return false

@@ -1,37 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:background="@color/background"
     android:layout_height="match_parent"
-    tools:context=".ui.plants.PlantsFragment" >
+    tools:context=".UsersFragment">
 
     <EditText
         android:id="@+id/email_login_edit_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="seach"
         android:layout_margin="16dp"
+        android:hint="search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/plants_recycler_View"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+        tools:itemCount="4"
+        tools:listitem="@layout/fragment_item_user"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_login_edit_view"
-        tools:itemCount="4"
-        tools:listitem="@layout/fragment_item_plant" />
+        app:layout_constraintTop_toBottomOf="@+id/email_login_edit_view" />
 
     <RelativeLayout
-        android:id="@+id/relativeLayout"
+        android:id="@+id/relativeLayout3"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/styles_nav_bar"
@@ -39,6 +36,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -60,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
                 android:layout_marginEnd="60dp"
-                android:backgroundTint="@color/buttons_navbar"
+                android:backgroundTint="@color/background_navbar"
                 android:src="@drawable/baseline_grass_24"
                 app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/user_button_navbar"
@@ -72,7 +70,7 @@
                 android:layout_width="64dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="60dp"
-                android:backgroundTint="@color/background_navbar"
+                android:backgroundTint="@color/buttons_navbar"
                 android:src="@drawable/baseline_person_24"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/plants_button_navbar" />
@@ -80,15 +78,4 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/new_user_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="80dp"
-        android:clickable="true"
-        android:src="@drawable/baseline_add_24"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>

@@ -6,5 +6,8 @@
     <color name="buttons">#00ADB5</color>
     <color name="buttons_navbar">#E6F8ED</color>
     <color name="background_navbar">#B1EEBE</color>
-
+    <color name="background_item">#0CAE6C</color>
+    <color name="item_text">#FFFFFFFF</color>
+    <color name="item_text_water">#0C58CF</color>
+    <color name="item_text_sun">#E0E707</color>
 </resources>

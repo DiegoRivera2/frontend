@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.users.ItemUserFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/user_image_View"
+            android:layout_width="164dp"
+            android:layout_height="138dp"
+            android:contentDescription="Imagen de la planta"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/baseline_person_24" />
+
+
+        <TextView
+            android:id="@+id/user_name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Julio Rivera"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user_image_View"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/age_title_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Age:"
+            app:layout_constraintStart_toStartOf="@+id/user_name_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/user_name_text_view" />
+
+        <TextView
+            android:id="@+id/user_age_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="33"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintStart_toEndOf="@+id/age_title_text_view"
+            app:layout_constraintTop_toTopOf="@+id/age_title_text_view" />
+
+
+        <TextView
+            android:id="@+id/title_email_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/age_title_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/age_title_text_view" />
+
+        <TextView
+            android:id="@+id/user_email_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="ejemplo@gmail.com"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintStart_toEndOf="@+id/title_email_text_view"
+            app:layout_constraintTop_toTopOf="@+id/title_email_text_view" />
+
+        <TextView
+            android:id="@+id/title_position_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Position:"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/title_email_text_view"
+            app:layout_constraintTop_toBottomOf="@+id/title_email_text_view" />
+
+        <TextView
+            android:id="@+id/user_position_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Normal user"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintStart_toEndOf="@+id/title_position_text_view"
+            app:layout_constraintTop_toTopOf="@+id/title_position_text_view" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/edit_user_button"
+            android:layout_width="88dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/styles_item_plant_button"
+            android:text="Edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/user_image_View"
+            app:layout_constraintTop_toBottomOf="@+id/user_position_text_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Media -->
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

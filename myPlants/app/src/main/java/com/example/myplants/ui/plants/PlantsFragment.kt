@@ -63,7 +63,7 @@ class PlantsFragment : Fragment() {
 
     private fun displayPlant(){
         lifecycleScope.launch {
-            adapter.setData(plantViewModel.getFood())
+            adapter.setData(plantViewModel.getPlant())
             adapter.notifyDataSetChanged()//notifica si hay un cambio
         }
 

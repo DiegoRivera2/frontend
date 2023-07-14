@@ -1,4 +1,4 @@
-package com.example.myplants.ui.users
+package com.example.myplants.ui.users_navbar
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.example.myplants.R
-import com.example.myplants.databinding.FragmentHomeBinding
 import com.example.myplants.databinding.FragmentUserBinding
 
 

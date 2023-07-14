@@ -58,7 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/userFragment"
-        android:name="com.example.myplants.ui.users.UserFragment"
+        android:name="com.example.myplants.ui.users_navbar.UserFragment"
         android:label="fragment_user"
         tools:layout="@layout/fragment_user" >
         <action
@@ -70,7 +70,7 @@
     </fragment>
     <fragment
         android:id="@+id/plantDetailFragment"
-        android:name="com.example.myplants.PlantDetailFragment"
+        android:name="com.example.myplants.ui.detailplant.PlantDetailFragment"
         android:label="PlantDetailFragment" >
         <action
             android:id="@+id/action_plantDetailFragment_to_plantsFragment"

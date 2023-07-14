@@ -1,9 +1,11 @@
 package com.example.myplants.ui.plants.recyclerview
 
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myplants.R
 import com.example.myplants.data.model.PlantModel
 import com.example.myplants.databinding.FragmentItemPlantBinding
+import com.example.myplants.databinding.FragmentPlantDetailBinding
 import com.squareup.picasso.Picasso
 
 class PlantRecyclerViewHolder (private val binding: FragmentItemPlantBinding): RecyclerView.ViewHolder(binding.root) {
@@ -15,6 +17,12 @@ class PlantRecyclerViewHolder (private val binding: FragmentItemPlantBinding): R
             .error(R.mipmap.ic_launcher)
             .into(binding.plantImageView)
         binding.descriptionFoodTextView.text = plant.description
+
+
+        binding.editItemButton.setOnClickListener(){
+
+           clickListener(plant)
+        }
 
     }
 }
