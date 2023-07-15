@@ -38,4 +38,8 @@ object DigitaltInstance {
     fun getUsersService(): AuthService{
         return retrofit.create(AuthService::class.java)
     }
+
+    fun getNurseriesService(): AuthService{
+        return retrofit.create(AuthService::class.java)
+    }
 }

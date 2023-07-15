@@ -70,6 +70,12 @@
         <action
             android:id="@+id/action_userFragment_to_usersFragment"
             app:destination="@id/usersFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_nurseriesFragment"
+            app:destination="@id/nurseriesFragment" />
+        <action
+            android:id="@+id/action_userFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
     <fragment
         android:id="@+id/plantDetailFragment"
@@ -94,5 +100,43 @@
         <action
             android:id="@+id/action_usersFragment_to_userFragment"
             app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/action_usersFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_usersFragment_to_userFragment2"
+            app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/action_usersFragment_to_plantsFragment"
+            app:destination="@id/plantsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nurseriesFragment"
+        android:name="com.example.myplants.ui.nursery.NurseriesFragment"
+        android:label="NurseriesFragment" >
+        <action
+            android:id="@+id/action_nurseriesFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/action_nurseriesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_nurseriesFragment_to_plantsFragment"
+            app:destination="@id/plantsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.myplants.ui.aboutus.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_aboutFragment_to_userFragment"
+            app:destination="@id/userFragment" />
+        <action
+            android:id="@+id/action_aboutFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_aboutFragment_to_plantsFragment"
+            app:destination="@id/plantsFragment" />
     </fragment>
 </navigation>

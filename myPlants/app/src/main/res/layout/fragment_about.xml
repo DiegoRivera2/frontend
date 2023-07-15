@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.aboutus.AboutFragment">
+
+    <ImageView
+        android:layout_width="298dp"
+        android:layout_height="168dp"
+        android:src="@drawable/logo"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout5"
+        android:layout_width="335dp"
+        android:layout_height="359dp"
+        android:layout_marginBottom="124dp"
+        android:background="@drawable/styles_detail_plant_boxes"
+        android:elevation="10dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/about_text_view"
+            android:layout_width="299dp"
+            android:layout_height="252dp"
+            android:text="Bienvenido a MyPlants, tu compañero botánico en el mundo de las plantas. Nuestra pasión por la naturaleza y el verde nos ha impulsado a crear una plataforma única para todos los amantes de las plantas, desde entusiastas principiantes hasta expertos jardineros.
+
+En MyPlants, creemos que las plantas no son solo seres vivos, sino también una fuente de alegría, serenidad y belleza en nuestras vidas. Nuestra misión es acercarte a la naturaleza, sin importar dónde te encuentres, proporcionándote la información y las herramientas necesarias para cultivar un vínculo más fuerte con el reino vegetal."
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--grafica -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/styles_nav_bar"
+        app:cardElevation="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/home_button_navbar"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:backgroundTint="@color/buttons_navbar"
+                android:src="@drawable/baseline_home_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/plants_button_navbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="60dp"
+                android:backgroundTint="@color/background_navbar"
+                android:src="@drawable/baseline_grass_24"
+                app:cardCornerRadius="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/user_button_navbar"
+                app:layout_constraintStart_toEndOf="@+id/home_button_navbar"
+                app:layout_constraintTop_toTopOf="@+id/home_button_navbar" />
+
+            <ImageButton
+                android:id="@+id/user_button_navbar"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="60dp"
+                android:backgroundTint="@color/background_navbar"
+                android:src="@drawable/baseline_person_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/plants_button_navbar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

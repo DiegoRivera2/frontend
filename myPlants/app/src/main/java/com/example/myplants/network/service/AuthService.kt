@@ -1,5 +1,6 @@
 package com.example.myplants.network.service
 
+import com.example.myplants.data.model.NurseryModel
 import com.example.myplants.data.model.PlantModel
 import com.example.myplants.data.model.UserModel
 import com.example.myplants.network.dto.login.LoginRequest
@@ -25,4 +26,7 @@ interface AuthService {
 
     @GET("plantsApi/users")
     suspend fun allUsers(): List<UserModel>
+
+    @GET("plantsApi/nursery")
+    suspend fun allNurseries(): List<NurseryModel>
 }

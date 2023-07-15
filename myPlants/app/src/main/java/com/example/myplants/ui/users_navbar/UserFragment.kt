@@ -33,6 +33,12 @@ class UserFragment : Fragment() {
         bindinguser.userButton.setOnClickListener(){
             it.findNavController().navigate(R.id.action_userFragment_to_usersFragment)
         }
+        bindinguser.nurseryButton.setOnClickListener(){
+            it.findNavController().navigate(R.id.action_userFragment_to_nurseriesFragment)
+        }
+        bindinguser.AboutButton.setOnClickListener(){
+            it.findNavController().navigate(R.id.action_userFragment_to_aboutFragment)
+        }
         bindinguser.homeButtonNavbar.setOnClickListener(){
             it.findNavController().navigate(R.id.action_userFragment_to_homeFragment)
         }

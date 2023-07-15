@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".ui.nursery.ItemNurseryFragment">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="@color/background_item"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/nursery_image_View"
+                android:layout_width="164dp"
+                android:layout_height="0dp"
+                android:contentDescription="Imagen de la planta"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/vierophoto" />
+
+            <TextView
+                android:id="@+id/nursery_name_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/item_text"
+                android:text="Vivero la casa de la abuela"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/age_title_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:text="Video:"
+                android:textColor="@color/item_text"
+                app:layout_constraintStart_toStartOf="@+id/nursery_name_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/nursery_name_text_view" />
+
+            <TextView
+                android:id="@+id/nursery_video_text_view"
+                android:layout_width="134dp"
+                android:layout_height="22dp"
+                android:text="https://video.com"
+                android:textColor="@color/item_text"
+                app:layout_constraintStart_toStartOf="@+id/age_title_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/age_title_text_view" />
+
+
+            <TextView
+                android:id="@+id/title_email_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Ubicacion:"
+                android:textColor="@color/item_text"
+                app:layout_constraintStart_toStartOf="@+id/nursery_video_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/nursery_video_text_view" />
+
+            <TextView
+                android:id="@+id/nursery_ubication_text_view"
+                android:layout_width="195dp"
+                android:layout_height="19dp"
+                android:text="Urb Ind Plan de La Laguna Antgo"
+                android:textColor="@color/item_text"
+                app:layout_constraintStart_toStartOf="@+id/title_email_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/title_email_text_view" />
+
+            <TextView
+                android:id="@+id/title_position_text_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Description:"
+                android:textColor="@color/item_text"
+                app:layout_constraintStart_toStartOf="@+id/nursery_ubication_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/nursery_ubication_text_view" />
+
+            <TextView
+                android:id="@+id/nursery_description_text_view"
+                android:layout_width="201dp"
+                android:layout_height="36dp"
+                android:textColor="@color/item_text"
+                android:text="Con mas de 40 años de experiencia. Le brindamos.Diseño de Jardines.Alquiler de Plantas.Asesoria tecnica personalizada.Plantas exóticas.Ambiente seguro y agradable.Con personal altamente calificado"
+                app:layout_constraintStart_toStartOf="@+id/title_position_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/title_position_text_view" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/edit_user_button"
+                android:layout_width="88dp"
+                android:layout_height="37dp"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/styles_item_plant_button"
+                android:text="Edit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nursery_description_text_view"
+                app:layout_constraintVertical_bias="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Media -->
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

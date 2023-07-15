@@ -42,13 +42,16 @@ class UsersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setRecyclerView(view)
         bindingUsersFragment.homeButtonNavbar.setOnClickListener(){
-            it.findNavController().navigate(R.id.action_plantsFragment_to_homeFragment)
+            it.findNavController().navigate(R.id.action_usersFragment_to_homeFragment)
         }
+        /*
         bindingUsersFragment.userButtonNavbar.setOnClickListener(){
-            it.findNavController().navigate(R.id.action_plantsFragment_to_userFragment)
+            it.findNavController().navigate(R.id.action_usersFragment_to_userFragment)
         }
+        */
+
         bindingUsersFragment.plantsButtonNavbar.setOnClickListener(){
-            it.findNavController().navigate(R.id.action_plantsFragment_to_userFragment)
+            it.findNavController().navigate(R.id.action_usersFragment_to_plantsFragment)
         }
     }
     private fun setRecyclerView(view:View){
@@ -56,13 +59,13 @@ class UsersFragment : Fragment() {
 
         adapter = UserRecyclerAdapter { selectedUser -> showSelectedItem(selectedUser) }
         bindingUsersFragment.usersRecyclerView.adapter = adapter
-        displayPlant()//mostrando los card
+        displayUsers()//mostrando los card
     }
     private fun showSelectedItem(user: UserModel){
         userViewModel.setSelectedUser(user)
 
     }
-    private fun displayPlant(){
+    private fun displayUsers(){
         lifecycleScope.launch {
             adapter.setData(userViewModel.getUser())
             adapter.notifyDataSetChanged()//notifica si hay un cambio

@@ -5,11 +5,15 @@ import android.content.Context
 import android.content.SharedPreferences
 import com.example.myplants.network.digitalapi.DigitaltInstance
 import com.example.myplants.repository.CredentialsRepository
+import com.example.myplants.repository.NurseryRepository
 import com.example.myplants.repository.PlantRepository
 import com.example.myplants.repository.UsersRepository
 
 class DigitalApplication : Application() {
 
+    val nurseryRepository: NurseryRepository by lazy {
+        NurseryRepository(DigitaltInstance.getNurseriesService())
+    }
     val userRepository: UsersRepository by lazy {
         UsersRepository(DigitaltInstance.getUsersService())
     }
